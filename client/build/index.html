@@ -8,7 +8,7 @@
   <body>
   <div id="calculator-container">
     <form name="calculator">
-      <input type="text" name="answer">
+      <input type="text" id="text-box" name="answer">
       <br>
         <input type="button" value=" 1 " onclick="calculator.answer.value += '1'"/>
         <input type="button" value=" 2 " onclick="calculator.answer.value += '2'"/>
@@ -27,7 +27,7 @@
       <br>
         <input type="button" value=" c " onclick="calculator.answer.value = ''"/> 
         <input type="button" value=" 0 " onclick="calculator.answer.value += '0'"/> 
-        <input type="button" id="result" value=" = " calculator.answer.value = eval(calculator.answer.value)/> 
+        <input type="button" id="result" value=" = " /> 
         <input type="button" value=" / " onclick="calculator.answer.value += '/'"/> 
         <input type="button" value=" . " onclick="calculator.answer.value += '.'"/> 
 
