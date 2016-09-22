@@ -42,26 +42,56 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
+	var Calculator = __webpack_require__(1);
+	
 	window.onload = function(){
 	  main();
 	}
 	
 	function main(){
-	  console.log("webpack app started");
+	  this.calc = new Calculator;
+	  // console.log("webpack app started");
 	  var result = document.getElementById('result');
 	  var textBox = document.getElementById('text-box')
-	  console.log(result);
+	  // console.log(result);
 	  result.addEventListener('click',function(){
-	    console.log("button clicked!");
-	    textBox.value = eval(textBox.value);
+	    // console.log("button clicked!");
+	    textBox.value = eval(textBox.value).toFixed(4);
 	  }.bind(this))
 	  console.log("Sam is God");
 	  }
 	
 	
 	  
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	var Calculator = function(){
+	  this.result = 0;
+	}
+	
+	Calculator.prototype = {
+	
+	  result: function(){
+	    try {
+	       this.result = eval( this.result ).toFixed(4);
+	          return this.result;
+	        }
+	        catch(err) {
+	          alert( "Syntax Error" );
+	          return this.result;
+	        }
+	      }
+	    }
+	  
+	
+	
+	
+	module.exports = Calculator;
 
 /***/ }
 /******/ ]);
