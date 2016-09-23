@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack -w"
+    "start": "webpack -w",
+    "test": "mocha src/specs"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +13,6 @@
     "mocha": "^2.4.5",
     "webpack": "^1.12.14"
   },
+  "dependencies": {},
   "description": ""
 }

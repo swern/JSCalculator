@@ -1,20 +1,22 @@
-var Calculator = require('./models/calculator');
+var Calculator = require('./models/calculator.js');
 
 window.onload = function(){
   main();
 }
 
 function main(){
-  this.calc = new Calculator;
+  this.calc = new Calculator();
   // console.log("webpack app started");
-  var result = document.getElementById('result');
+  var equals = document.getElementById('equals');
   var textBox = document.getElementById('text-box')
-  // console.log(result);
-  result.addEventListener('click',function(){
-    // console.log("button clicked!");
-    textBox.value = eval(textBox.value).toFixed(4);
+  console.log(equals);
+
+  equals.addEventListener('click',function(){
+    console.log("button clicked!");
+    // textBox.value = eval(textBox.value).toFixed(4);
+    textBox.value = this.calc.answer(textBox);
   }.bind(this))
-  console.log("Sam is God");
+  // console.log("Sam is God");
   }
 
 

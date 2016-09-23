@@ -4,17 +4,19 @@ var Calculator = function(){
 
 Calculator.prototype = {
 
-  result: function(){
+  answer: function(response){
     try {
-       this.result = eval( this.result ).toFixed(4);
+      var sum = eval(response.value);
+        this.result = parseFloat((sum).toFixed(8));
           return this.result;
         }
-        catch(err) {
-          alert( "Syntax Error" );
-          return this.result;
+    catch(err) {
+        alert("Syntax Error");
+        return this.result;
         }
-      }
-    }
+  
+  }
+}
   
 
 

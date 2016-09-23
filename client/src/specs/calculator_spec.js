@@ -1,4 +1,4 @@
-var calculator = require('../models/calculator');
+var Calculator = require('../models/calculator');
 var assert = require('assert');
 
 

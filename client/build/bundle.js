@@ -51,16 +51,18 @@
 	}
 	
 	function main(){
-	  this.calc = new Calculator;
+	  this.calc = new Calculator();
 	  // console.log("webpack app started");
-	  var result = document.getElementById('result');
+	  var equals = document.getElementById('equals');
 	  var textBox = document.getElementById('text-box')
-	  // console.log(result);
-	  result.addEventListener('click',function(){
-	    // console.log("button clicked!");
-	    textBox.value = eval(textBox.value).toFixed(4);
+	  console.log(equals);
+	
+	  equals.addEventListener('click',function(){
+	    console.log("button clicked!");
+	    // textBox.value = eval(textBox.value).toFixed(4);
+	    textBox.value = this.calc.answer(textBox);
 	  }.bind(this))
-	  console.log("Sam is God");
+	  // console.log("Sam is God");
 	  }
 	
 	
@@ -76,17 +78,19 @@
 	
 	Calculator.prototype = {
 	
-	  result: function(){
+	  answer: function(response){
 	    try {
-	       this.result = eval( this.result ).toFixed(4);
+	      var sum = eval(response.value);
+	        this.result = parseFloat((sum).toFixed(8));
 	          return this.result;
 	        }
-	        catch(err) {
-	          alert( "Syntax Error" );
-	          return this.result;
+	    catch(err) {
+	        alert("Syntax Error");
+	        return this.result;
 	        }
-	      }
-	    }
+	  
+	  }
+	}
 	  
 	
 	
