@@ -12,7 +12,7 @@ Calculator.prototype = {
           return this.result;
         }
     catch(err) {
-        // alert("Syntax Error");
+        alert("Syntax Error");
         return this.result;
         }
   
