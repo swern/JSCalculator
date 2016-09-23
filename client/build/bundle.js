@@ -60,7 +60,7 @@
 	  equals.addEventListener('click',function(){
 	    console.log("button clicked!");
 	    // textBox.value = eval(textBox.value).toFixed(4);
-	    textBox.value = this.calc.answer(textBox);
+	    textBox.value = this.calc.answer(textBox.value);
 	  }.bind(this))
 	  // console.log("Sam is God");
 	  }
@@ -79,13 +79,14 @@
 	Calculator.prototype = {
 	
 	  answer: function(response){
+	    console.log(response)
 	    try {
-	      var sum = eval(response.value);
+	      var sum = eval(response);
 	        this.result = parseFloat((sum).toFixed(8));
 	          return this.result;
 	        }
 	    catch(err) {
-	        alert("Syntax Error");
+	        // alert("Syntax Error");
 	        return this.result;
 	        }
 	  

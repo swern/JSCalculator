@@ -14,7 +14,7 @@ function main(){
   equals.addEventListener('click',function(){
     console.log("button clicked!");
     // textBox.value = eval(textBox.value).toFixed(4);
-    textBox.value = this.calc.answer(textBox);
+    textBox.value = this.calc.answer(textBox.value);
   }.bind(this))
   // console.log("Sam is God");
   }

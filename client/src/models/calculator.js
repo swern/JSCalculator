@@ -5,13 +5,14 @@ var Calculator = function(){
 Calculator.prototype = {
 
   answer: function(response){
+    console.log(response)
     try {
-      var sum = eval(response.value);
+      var sum = eval(response);
         this.result = parseFloat((sum).toFixed(8));
           return this.result;
         }
     catch(err) {
-        alert("Syntax Error");
+        // alert("Syntax Error");
         return this.result;
         }
   

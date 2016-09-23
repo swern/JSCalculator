@@ -9,7 +9,7 @@ describe('calculator', function(){
     });
 
   it( "can add", function() {
-     calculator.answer( 6 + 9 );
+     calculator.answer(" 6 + 9 ");
      assert.equal( 15, calculator.result );
    });
 
